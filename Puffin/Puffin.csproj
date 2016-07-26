@@ -19,6 +19,7 @@
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
+    <Commandlineparameters>/home/daniel/Documents/Scripts/test.puff</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
@@ -35,6 +36,51 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tokens\Token.cs" />
+    <Compile Include="Tokens\Integer.cs" />
+    <Compile Include="Tokens\Boolean.cs" />
+    <Compile Include="Tokens\Character.cs" />
+    <Compile Include="Tokens\ValueTokenType.cs" />
+    <Compile Include="Tokens\String.cs" />
+    <Compile Include="Tokens\Operator.cs" />
+    <Compile Include="Tokens\EnumKeyword.cs" />
+    <Compile Include="Tokens\Keyword.cs" />
+    <Compile Include="Tokens\OperatorType.cs" />
+    <Compile Include="Tokens\Word.cs" />
+    <Compile Include="Lexer.cs" />
+    <Compile Include="Compiler.cs" />
+    <Compile Include="CompileResult.cs" />
+    <Compile Include="PuffinException.cs" />
+    <Compile Include="FileInformation.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LexerResult.cs" />
+    <Compile Include="Contexts\BodyContext.cs" />
+    <Compile Include="Contexts\FunctionContext.cs" />
+    <Compile Include="Definitions\Function.cs" />
+    <Compile Include="Definitions\Variable.cs" />
+    <Compile Include="PASM Definitions\Point.cs" />
+    <Compile Include="PASM Definitions\PFunction.cs" />
+    <Compile Include="Definitions\Types.cs" />
+    <Compile Include="Compilers\BodyCompiler\BodyCompiler.cs" />
+    <Compile Include="Compilers\BodyCompiler\BodyCompilerResult.cs" />
+    <Compile Include="Definitions\Body\ImportInformation.cs" />
+    <Compile Include="IPASMRep.cs" />
+    <Compile Include="Compilers\Constructor\Constructor.cs" />
+    <Compile Include="Compilers\Constructor\ConstructedFile.cs" />
+    <Compile Include="Compilers\Constructor\HeaderFile.cs" />
+    <Compile Include="Compilers\Constructor\ConstructorResult.cs" />
+    <Compile Include="Definitions\Struct.cs" />
+    <Compile Include="Definitions\VariablePreDefine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Tokens\" />
+    <Folder Include="Contexts\" />
+    <Folder Include="Definitions\" />
+    <Folder Include="PASM Definitions\" />
+    <Folder Include="Compilers\" />
+    <Folder Include="Compilers\BodyCompiler\" />
+    <Folder Include="Definitions\Body\" />
+    <Folder Include="Compilers\Constructor\" />
+  </ItemGroup>
 </Project>
