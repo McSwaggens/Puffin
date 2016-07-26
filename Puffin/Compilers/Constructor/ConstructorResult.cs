@@ -16,6 +16,7 @@ namespace Puffin
 			foreach (string line in PASM)
 			{
 				Console.WriteLine($"{i}\t{line}");
+				i++;
 			}
 		}
 	}
