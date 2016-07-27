@@ -30,6 +30,7 @@ namespace Puffin
 			this.name = name;
 			this.requiredParameters = requiredParameters;
 			this.bodyTokens = bodyTokens;
+			point = new Point();
 		}
 		
 		
