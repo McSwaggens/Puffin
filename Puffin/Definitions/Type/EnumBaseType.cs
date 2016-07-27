@@ -2,17 +2,17 @@
 
 namespace Puffin
 {
-	public enum Types
+	public enum EnumBaseType
 	{
+		BYTE,
 		SHORT,
 		INT,
 		LONG,
-		STRING,
+		UBYTE,
 		USHORT,
 		UINT,
 		ULONG,
-		PTR,
-		POI
+		PTR
 	}
 }
 

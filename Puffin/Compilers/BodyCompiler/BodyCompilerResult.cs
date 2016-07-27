@@ -8,6 +8,9 @@ namespace Puffin
 		//List of imports found
 		public List<ImportInformation> imports = new List<ImportInformation>();
 		
+		//List of structs found
+		public List<Struct> structs = new List<Struct>();
+		
 		//List of functions found
 		public List<Function> functions = new List<Function>();
 		

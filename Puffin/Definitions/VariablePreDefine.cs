@@ -5,7 +5,7 @@ namespace Puffin
 	public class VariablePreDefine
 	{
 		public string name;
-		public 
+		public Type type;
 		
 		public VariablePreDefine ()
 		{
