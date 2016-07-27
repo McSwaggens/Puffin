@@ -23,11 +23,25 @@ namespace Puffin
 			ConstructorResult result = new ConstructorResult();
 			foreach (ConstructedFile file in constructedFiles)
 			{
+				//Add all of the imports
 				foreach (ImportInformation import in file.body.imports)
 				{
 					PASM.Add(import.ToPASM());
 				}
 				
+				//Add all functions
+				foreach (Function function in file.body.functions)
+				{
+					if (function.PASM == null)
+					{
+						Console.WriteLine ($"No PASM code was found for method {function.name}...");
+					}
+					else
+					foreach (string line in function.PASM)
+					{
+						PASM.Add (line);
+					}
+				}
 				
 				Console.WriteLine($"Constructed {file.name}");
 			}
