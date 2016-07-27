@@ -43,6 +43,20 @@ namespace Puffin
 					}
 				}
 				
+				//Add all structs
+				foreach (Struct _struct in file.body.structs)
+				{
+					if (_struct.PASM == null)
+					{
+						Console.WriteLine ($"No PASM code was found for struct {_struct.name}...");
+					}
+					else
+					foreach (string line in _struct.PASM)
+					{
+						PASM.Add (line);
+					}
+				}
+				
 				Console.WriteLine($"Constructed {file.name}");
 			}
 			

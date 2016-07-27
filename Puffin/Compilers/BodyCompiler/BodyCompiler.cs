@@ -50,14 +50,72 @@ namespace Puffin
 				
 				//Check for functions
 				if (FunctionCheck()) continue;
+
+				//Check for structs
+				if (StructCheck()) continue;
 				
 			}
 			
 			return result;
 		}
 		
+		bool StructCheck()
+		{
+			int previous = i;
+			
+			if (token is Keyword && (token as Keyword).keyword == EnumKeyword.STRUCT)
+			{
+				NextToken();
+				if (token is Word)
+				{
+					Word name = token as Word;
+					NextToken();
+					if (token is Operator && (token as Operator).type == OperatorType.OpeningBlockBracket)
+					{
+						NextToken();
+						int bodyLevel = 1;
+						List<Token> bodyTokens = new List<Token>();
+						
+						
+						//Get all of the tokens inside of the body
+						for (; i < tokens.Length; NextToken())
+						{
+							if (token is Operator)
+							{
+								if (((Operator)token).type == OperatorType.OpeningBlockBracket)
+								{
+									bodyLevel++;
+									bodyTokens.Add (token);
+								}
+								else if (((Operator)token).type == OperatorType.ClosingBlockBracket)
+								{
+									bodyLevel--;
+									if (bodyLevel == 0)
+									{
+										break;
+									}
+								}
+							}
+							else
+							{
+								bodyTokens.Add (token);
+							}
+						}
+						
+						Struct _struct = new Struct(name.raw as string, bodyTokens.ToArray());
+						result.structs.Add (_struct);
+						return true;
+					}
+				}
+			}
+			
+			i = previous;
+			return false;
+		}
+		
 		bool ImportCheck ()
 		{
+			int previous = i;
 			if (token is Keyword)
 			{
 				Keyword keyword = ((Keyword)token);
@@ -86,11 +144,13 @@ namespace Puffin
 					}
 				}
 			}
+			i = previous;
 			return false;
 		}
 		
 		bool FunctionCheck()
 		{
+			int previous = i;
 			if (token is Keyword)
 			{
 				Keyword keyword = (Keyword)token;
@@ -171,6 +231,7 @@ namespace Puffin
 					}
 				}
 			}
+			i = previous;
 			return false;
 		}
 	}

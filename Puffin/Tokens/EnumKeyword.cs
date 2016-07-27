@@ -14,7 +14,8 @@ namespace Puffin
 		WHILE,
 		DELETE,
 		PUBLIC,
-		VOID
+		VOID,
+		STRUCT
 	}
 }
 

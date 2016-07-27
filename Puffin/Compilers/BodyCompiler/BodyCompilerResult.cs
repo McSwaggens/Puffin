@@ -30,6 +30,12 @@ namespace Puffin
 			{
 				Console.WriteLine ($"\tName:\"{function.name}\"\n\tPublic:\"{function.isPublic}\"\n");
 			}
+			
+			Console.WriteLine ($"Structs({structs.Count}):");
+			foreach (Struct stru in structs)
+			{
+				Console.WriteLine ($"\tName:\"{stru.name}\"\n\tSize:1");
+			}
         }
 
         public void CompileFunctions()
@@ -37,6 +43,16 @@ namespace Puffin
 			foreach (Function function in functions)
 			{
 				function.Compile ();
+				Console.WriteLine ($"Function {function.name} compiled...");
+			}
+        }
+		
+		public void CompileStructs()
+        {
+			foreach (Struct stru in structs)
+			{
+				stru.Compile ();
+				Console.WriteLine ($"Struct {stru.name} compiled...");
 			}
         }
     }
