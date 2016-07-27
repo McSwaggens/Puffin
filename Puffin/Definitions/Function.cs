@@ -5,8 +5,8 @@ namespace Puffin
 {
 	public class Function
 	{
-		//PASM function representing the Puffin function
-		PFunction pFunction;
+		//Function location (point)
+		public Point point;
 		
 		//Whether the function can be accessed outside of the current file
 		public bool isPublic = false;
@@ -30,7 +30,6 @@ namespace Puffin
 			this.name = name;
 			this.requiredParameters = requiredParameters;
 			this.bodyTokens = bodyTokens;
-			pFunction = new PFunction();
 		}
 		
 		
@@ -41,7 +40,7 @@ namespace Puffin
 			List<string> pasm = new List<string>();
 			
 			//Create the head of the function (point)
-			pasm.Add ($"pt {pFunction.id}");
+			pasm.Add ($"pt {point.id}");
 			
 			
 			

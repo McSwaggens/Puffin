@@ -58,8 +58,6 @@
     <Compile Include="Contexts\FunctionContext.cs" />
     <Compile Include="Definitions\Function.cs" />
     <Compile Include="Definitions\Variable.cs" />
-    <Compile Include="PASM Definitions\Point.cs" />
-    <Compile Include="PASM Definitions\PFunction.cs" />
     <Compile Include="Compilers\BodyCompiler\BodyCompiler.cs" />
     <Compile Include="Compilers\BodyCompiler\BodyCompilerResult.cs" />
     <Compile Include="Definitions\Body\ImportInformation.cs" />
@@ -75,6 +73,8 @@
     <Compile Include="Definitions\Type\UserDefineType.cs" />
     <Compile Include="Definitions\Type\EnumBaseType.cs" />
     <Compile Include="Definitions\Type\BaseType.cs" />
+    <Compile Include="PASM Definitions\Point.cs" />
+    <Compile Include="PASM Definitions\Register.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

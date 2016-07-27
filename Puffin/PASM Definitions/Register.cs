@@ -2,20 +2,25 @@
 
 namespace Puffin
 {
-	public class Point
+	public class Register
 	{
 		public static int staticID = 0;
 		public bool inFunction = false;
 		public int id;
-
-		public Point ()
+		
+		public Register ()
 		{
 			id = staticID++;
 		}
-
-		public Point (int id)
+		
+		public Register (int id)
 		{
 			this.id = id;
+		}
+		
+		public string ToPASM ()
+		{
+			return (inFunction ? ":" : "") + id;
 		}
 	}
 }
