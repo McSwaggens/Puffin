@@ -95,6 +95,10 @@ namespace Puffin
 										break;
 									}
 								}
+								else
+								{
+									bodyTokens.Add (token);
+								}
 							}
 							else
 							{
