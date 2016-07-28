@@ -29,6 +29,9 @@ namespace Puffin
 			
 			//Compile the source code into PASM, returning the outputted data to a CompileResult object
 			CompileResult result = compiler.Compile();
+			
+			//Write the compiled code to the output file
+			result.WriteOutput (compiler.outputFileInformation);
 		}
 	}
 }
