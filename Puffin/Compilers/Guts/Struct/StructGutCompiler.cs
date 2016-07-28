@@ -73,7 +73,7 @@ namespace Puffin
 							
 							if (token is Operator && (token as Operator).type == OperatorType.SemiColon)
 							{
-								pasm.Add ($"set :1 PARD :0 {size} {size + type.size}");
+								pasm.Add ($"set :1 PARD :0 {size} {type.size}");
 								pasm.Add ($"set :1 {type.alias_pasm} {_default}");
 							}
 							else
