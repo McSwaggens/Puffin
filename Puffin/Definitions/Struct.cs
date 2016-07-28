@@ -25,11 +25,16 @@ namespace Puffin
 			
 			pasm.Add ($"pt {point.id}");
 			
-			uint size = 1;
+			StructGutCompiler compiler = new StructGutCompiler(tokens);
 			
-			int index = 1;
+			StructGutCompilerResult compilation_result = compiler.Compile();
 			
-			pasm.Add ($"malloc_d :0 {size}");
+			pasm.Add ($"malloc_d :0 {compilation_result.size}");
+			
+			foreach (string str in compilation_result.PASM)
+			{
+				pasm.Add (str);
+			}
 			
 			pasm.Add ($"re :0");
 			

@@ -4,10 +4,7 @@ namespace Puffin
 {
 	public class Type
 	{
-		public string name;
-		public Type ()
-		{
-		}
+		public ulong size = 0;
 	}
 }
 

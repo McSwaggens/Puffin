@@ -68,13 +68,14 @@
     <Compile Include="Compilers\Constructor\ConstructorResult.cs" />
     <Compile Include="Definitions\Struct.cs" />
     <Compile Include="Definitions\VariablePreDefine.cs" />
-    <Compile Include="Definitions\Type\Type.cs" />
-    <Compile Include="BaseTypeConverter.cs" />
-    <Compile Include="Definitions\Type\UserDefineType.cs" />
-    <Compile Include="Definitions\Type\EnumBaseType.cs" />
-    <Compile Include="Definitions\Type\BaseType.cs" />
     <Compile Include="PASM Definitions\Point.cs" />
     <Compile Include="PASM Definitions\Register.cs" />
+    <Compile Include="Compilers\Guts\Struct\StructGutCompiler.cs" />
+    <Compile Include="Definitions\Type\Type.cs" />
+    <Compile Include="Definitions\Type\UserDefineType.cs" />
+    <Compile Include="Definitions\Type\PredefineType.cs" />
+    <Compile Include="TypeUtil.cs" />
+    <Compile Include="Compilers\Guts\Struct\StructGutCompilerResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -86,6 +87,8 @@
     <Folder Include="Compilers\BodyCompiler\" />
     <Folder Include="Definitions\Body\" />
     <Folder Include="Compilers\Constructor\" />
+    <Folder Include="Compilers\Guts\" />
+    <Folder Include="Compilers\Guts\Struct\" />
     <Folder Include="Definitions\Type\" />
   </ItemGroup>
 </Project>
