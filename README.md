@@ -1,7 +1,7 @@
-###What is Puffin?
+### What is Puffin?
 Puffin is a C/Java like programming language that compiles into PASM.
 
-####Unique features
+#### Unique features
 *__new__* - Keyword that can be used to copy data.
 ```C++
 int a = 123;
