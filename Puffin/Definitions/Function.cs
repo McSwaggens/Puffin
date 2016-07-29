@@ -43,6 +43,8 @@ namespace Puffin
 			//Create the head of the function (point)
 			pasm.Add ($"pt {point.id}");
 			
+			FunctionGutCompiler compiler = new FunctionGutCompiler (bodyTokens, this);
+			FunctionGutCompilerResult result = compiler.Compile ();
 			
 			
 			pasm.Add ($"re");
