@@ -34,7 +34,7 @@ namespace Puffin
 			Console.WriteLine ($"Structs({structs.Count}):");
 			foreach (Struct stru in structs)
 			{
-				Console.WriteLine ($"\tName:\"{stru.name}\"\n\tSize:1");
+				Console.WriteLine ($"\tName:\"{stru.name}\"\n\tSize:{stru.size}");
 			}
         }
 

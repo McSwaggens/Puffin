@@ -8,6 +8,8 @@ namespace Puffin
 		public Point point;
 		public string name;
 		
+		public ulong size;
+		
 		public string[] PASM;
 		
 		private Token[] tokens;
@@ -28,6 +30,8 @@ namespace Puffin
 			StructGutCompiler compiler = new StructGutCompiler(tokens);
 			
 			StructGutCompilerResult compilation_result = compiler.Compile();
+			
+			size = compilation_result.size;
 			
 			pasm.Add ($"malloc_d :0 {compilation_result.size}");
 			
