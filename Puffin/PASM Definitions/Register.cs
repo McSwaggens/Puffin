@@ -8,14 +8,16 @@ namespace Puffin
 		public bool inFunction = false;
 		public int id;
 		
-		public Register ()
+		public Register (bool inFunction)
 		{
 			id = staticID++;
+			this.inFunction = inFunction;
 		}
 		
-		public Register (int id)
+		public Register (int id, bool inFunction)
 		{
 			this.id = id;
+			this.inFunction = inFunction;
 		}
 		
 		public string ToPASM ()
