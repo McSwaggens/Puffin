@@ -73,13 +73,12 @@ namespace Puffin
 			//Compile the body with the lexerResult
 			BodyCompilerResult bodyCompilerResult = new BodyCompiler(lexerResult).Compile();
 			
+			bodyCompilerResult.CompileStructs ();
+			
 			//Print out the imports and functions returned from the body compiler
 			bodyCompilerResult.PrintContents ();
 			
 			bodyCompilerResult.CompileFunctions ();
-			
-			bodyCompilerResult.CompileStructs ();
-			
 			
 			//Create a constructor to compile the information we've gathered into one string array
 			Constructor constructor = new Constructor();
