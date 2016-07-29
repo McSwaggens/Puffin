@@ -76,6 +76,8 @@
     <Compile Include="Definitions\Type\PredefineType.cs" />
     <Compile Include="TypeUtil.cs" />
     <Compile Include="Compilers\Guts\Struct\StructGutCompilerResult.cs" />
+    <Compile Include="Compilers\Guts\Function\FunctionGutCompiler.cs" />
+    <Compile Include="Compilers\Guts\Function\FunctionGutCompilerResult.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -90,5 +92,6 @@
     <Folder Include="Compilers\Guts\" />
     <Folder Include="Compilers\Guts\Struct\" />
     <Folder Include="Definitions\Type\" />
+    <Folder Include="Compilers\Guts\Function\" />
   </ItemGroup>
 </Project>
