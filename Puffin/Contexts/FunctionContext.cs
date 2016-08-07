@@ -7,8 +7,10 @@ namespace Puffin
 	{
 		public Function function;
 		public List<Variable> variables = new List<Variable>();
-		
-		public FunctionContext (Function function)
+
+        public FunctionContext parentContext;
+
+        public FunctionContext (Function function)
 		{
 			this.function = function;
 			foreach (KeyValuePair<Type, Variable> tv in function.requiredParameters)
@@ -16,6 +18,17 @@ namespace Puffin
 				variables.Add (tv.Value);
 			}
 		}
+		
+        public FunctionContext (Function function, FunctionContext parentContext)
+		{
+			this.function = function;
+			foreach (KeyValuePair<Type, Variable> tv in function.requiredParameters)
+			{
+				variables.Add (tv.Value);
+			}
+
+            this.parentContext = parentContext;
+        }
 		
 		public bool DoesVariableExist (Word word, out Variable oVariable)
 		{
@@ -29,6 +42,12 @@ namespace Puffin
 					return true;
 				}
 			}
+			
+			if (parentContext != null)
+			{
+                return parentContext.DoesVariableExist(word, out oVariable);
+            }
+			
 			oVariable = null;
 			return false;
 		}
@@ -44,10 +63,16 @@ namespace Puffin
 					return true;
 				}
 			}
+			
+			if (parentContext != null)
+			{
+                return parentContext.DoesVariableExist(word);
+            }
+			
 			return false;
 		}
 		
-		public Variable GetVariableExist (Word word)
+		public Variable GetVariable (Word word)
 		{
 			string name = word.raw as string;
 			
